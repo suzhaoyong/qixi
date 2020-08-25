@@ -2,12 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>suja</title>
 	<link rel="stylesheet" href="css/style.css" />
-	<script type="text/javascript" src="js/qixi.js" ></script>
+	<!-- <script type="text/javascript" src="js/qixi.js" ></script> -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	</head>
 	<body>
 		<div id="content">
+			<div id="nameWaper">
+				<span>su</span>
+				<div class="heart"></div>
+				<span>ja</span>
+			</div>
 			<ul class="content_wrap">
 				<li>
 					<!--背景图-->
@@ -79,3 +85,46 @@
 	<audio src="music/circulation.wav" id="audio2" preload="auto" loop="loop"></audio>
 	</body>
 </html>
+<style>
+#nameWaper {
+	position: absolute;
+	top: 40px;
+	left: 40px;
+	z-index: 1000;
+	display: flex;
+}
+#nameWaper span{
+	display: block;
+	width: 55px;
+	text-align: center;
+}
+.heart{
+   width: 40px;
+   height: 40px;
+   background: #f00;
+   position: relative;
+   filter:drop-shadow(0px 0px 20px rgb(255,20,20));
+   animation: 1s linear 0s infinite heartbeat;
+   transform: rotate(45deg); 
+}
+.heart:before, .heart:after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #f00;
+    border-radius: 20px;
+}
+.heart:before{
+   left: -20px;  
+}
+.heart:after{
+   left: 0;
+   top: -20px;
+}
+@keyframes heartbeat{
+    0%{transform: rotate(45deg) scale(0.8,0.8); opacity: 1;}
+    25%{transform: rotate(45deg) scale(1,1); opacity: 0.8;}
+    100%{transform: rotate(45deg) scale(0.8,0.8); opacity: 1;}
+}
+</style>
